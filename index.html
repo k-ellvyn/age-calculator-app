@@ -19,26 +19,30 @@
 <body>
   <main>
     <div id="app" class="app">
-      <form class="primary-form" action="">
+      <form id="app-form" class="primary-form" action="" novalidate>
         <div class="primary-form__start">
-          <div class="primary-form__item">
+          <div class="form-item">
             <label class="text-field-label" for="day-field">day</label>
-            <input id="day-field" class="text-field" type="text" pattern="[0-9]{0,2}" name="day" placeholder="DD" required>
-            <p class="text-field-info">This field is required</p>
+            
+            <input title="Must be a valid day" id="day-field" class="text-field" type="text" pattern="[0-9]{2}" name="day" data-type="day" data-char-limit="2" max="31" placeholder="DD" required>
+            
+            <p class="text-field-info"></p>
           </div>
           
-          <div class="primary-form__item">
+          <div class="form-item">
             <label class="text-field-label" for="month-field">month</label>
-            <input id="month-field" class="text-field" type="text" pattern="[0-9]{0,2}" name="month" placeholder="MM" required>
-            <p class="text-field-info">This field is required</p>
+           
+            <input title="Must be a valid month" id="month-field" class="text-field" type="text" pattern="[0-9]{2}" name="month" data-type="month" data-char-limit="2" max="12" placeholder="MM" required>
+            
+            <p class="text-field-info"></p>
           </div>
           
-          <div class="primary-form__item">
+          <div class="form-item">
             <label class="text-field-label" for="year-field">year</label>
 
-            <input id="year-field" class="text-field" type="text" pattern="[0-9]{0,4}" name="year" placeholder="YYYY" required>
-          
-            <p class="text-field-info">This field is required</p>
+            <input title="Must be a year after 1901 and in the past" id="year-field" class="text-field" type="text" pattern="[0-9]{4}" name="year" data-type="year" data-char-limit="4" min="1901" placeholder="YYYY" required>
+      
+            <p class="text-field-info"></p>
           </div>
         </div>
         
@@ -50,17 +54,12 @@
       </form>
 
       <div class="results">
-        <p id="results-year" class="results__text"><span>--</span> years</p>
+        <p id="results-years" class="results__text"><span>--</span> years</p>
         <p id="results-months" class="results__text"><span>--</span> months</p>
         <p id="results-days" class="results__text"><span>--</span> days</p>
       </div>
     </div>
   </main>
-  
-  <!-- <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
-  </div> -->
 </body>
 
 </html>
